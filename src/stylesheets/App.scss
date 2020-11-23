@@ -1,2 +1,8 @@
+body {
+  background-color: black;
+}
+
 @import "core/reset";
 @import "layout/header";
+@import "layout/characterList";
+@import "layout/character";
