@@ -1,16 +1,16 @@
 import React from "react";
 
-const Character = () => {
+const Character = (props) => {
   return (
     <li className="character">
-      {/*  /*   <img
-          className="character__img"
-          src=
-          alt=
-          title=
-        /> 
-      <h2 className="character__name"></h2>
-      <p className="character__species"></p> */}
+      <img
+        className="character__img"
+        src={props.character.image}
+        alt={props.character.name}
+        title={props.character.name}
+      />
+      <h2 className="character__name">{props.character.name}</h2>
+      <p className="character__species">{props.character.species}</p>
     </li>
   );
 };

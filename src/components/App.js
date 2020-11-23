@@ -11,7 +11,7 @@ const App = () => {
   useEffect(() => {
     getDataFromApi().then((data) => setCharacters(data));
   }, []);
-  console.log(characters);
+
   return (
     <>
       <Header />
