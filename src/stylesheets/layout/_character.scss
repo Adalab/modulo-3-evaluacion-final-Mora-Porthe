@@ -4,6 +4,7 @@
   box-sizing: border-box;
   border-color: black;
   width: 200px;
+  box-shadow: #97ce4c 1px 0 7px;
 
   &__img {
     width: 100%;
@@ -12,7 +13,6 @@
   }
   &__name {
     text-align: center;
-    /* color: #222; */
     color: blanchedalmond;
     text-shadow: #97ce4c 1px 0 10px;
 
