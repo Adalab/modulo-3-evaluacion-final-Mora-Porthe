@@ -18,7 +18,7 @@ const Filter = (props) => {
         type="text"
         name="name"
         id="name"
-        placeholder="Search: Beth Smith"
+        placeholder="Search here: Beth Smith"
         onChange={handleChange}
       />
     </form>

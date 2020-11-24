@@ -8,8 +8,13 @@ import "../stylesheets/App.scss";
 import Character from "./Character";
 
 const App = () => {
+  // states
+
   const [characters, setCharacters] = useState([]);
   const [characterFilter, setCharacterFilter] = useState("");
+
+  // api
+
   useEffect(() => {
     getDataFromApi().then((data) => setCharacters(data));
   }, []);
@@ -24,11 +29,18 @@ const App = () => {
     return character.name.toUpperCase().includes(characterFilter.toUpperCase());
   });
 
+  const filterCharacters =
+    filteredCharacters.length > 0 ? (
+      <CharacterList characters={filteredCharacters} />
+    ) : (
+      <p className="form__notFound"> ¡Sorry! There is no matching character</p>
+    );
+
   return (
     <>
       <Header />
       <Filter handleFilter={handleFilter} />
-      <CharacterList characters={filteredCharacters} />
+      {filterCharacters}
     </>
   );
 };
