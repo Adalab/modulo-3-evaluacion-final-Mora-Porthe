@@ -5,6 +5,7 @@ import CharacterList from "./CharacterList";
 import Header from "./Header";
 import Filter from "./Filter";
 import "../stylesheets/App.scss";
+import Character from "./Character";
 
 const App = () => {
   const [characters, setCharacters] = useState([]);
@@ -19,13 +20,15 @@ const App = () => {
     setCharacterFilter(data.value);
   };
 
-  /* const filteredCharacters; */
+  const filteredCharacters = characters.filter((character) => {
+    return character.name.toUpperCase().includes(characterFilter.toUpperCase());
+  });
 
   return (
     <>
       <Header />
       <Filter handleFilter={handleFilter} />
-      <CharacterList characters={characters} />
+      <CharacterList characters={filteredCharacters} />
     </>
   );
 };
