@@ -1,11 +1,12 @@
 import React from "react";
+import { Route, Switch } from "react-router-dom";
 import { useEffect, useState } from "react";
 import getDataFromApi from "../services/getDataFromApi";
 import CharacterList from "./CharacterList";
 import Header from "./Header";
 import Filter from "./Filter";
+import CharacterDetail from "./CharacterDetail";
 import "../stylesheets/App.scss";
-import Character from "./Character";
 
 const App = () => {
   // states
@@ -38,11 +39,22 @@ const App = () => {
       </p>
     );
 
+  const renderCharacterDetail = (props) => {
+    const characterName = props.match.params.name;
+    const foundCharacter = characters.find((character) => {
+      return character.name === characterName;
+    });
+    return <CharacterDetail character={foundCharacter} />;
+  };
+
   return (
     <>
       <Header />
       <Filter handleFilter={handleFilter} />
       {filterCharacters}
+      <Switch>
+        <Route path="/character/:name" render={renderCharacterDetail} />
+      </Switch>
     </>
   );
 };
