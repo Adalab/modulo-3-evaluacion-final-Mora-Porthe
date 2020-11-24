@@ -44,15 +44,21 @@ const App = () => {
     const foundCharacter = characters.find((character) => {
       return character.name === characterName;
     });
-    return <CharacterDetail character={foundCharacter} />;
+    if (foundCharacter !== undefined) {
+      return <CharacterDetail character={foundCharacter} />;
+    } else {
+      return <p className="url_norFound">Not a valid URL</p>;
+    }
   };
 
   return (
     <>
       <Header />
       <Filter handleFilter={handleFilter} />
-      {filterCharacters}
       <Switch>
+        <Route exact path="/">
+          {filterCharacters}
+        </Route>
         <Route path="/character/:name" render={renderCharacterDetail} />
       </Switch>
     </>

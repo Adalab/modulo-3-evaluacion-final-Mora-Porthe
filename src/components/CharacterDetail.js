@@ -1,11 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import "../stylesheets/layout/_characterDetail.scss";
 
 const CharacterDetail = (props) => {
   return (
     <div className="modal">
       <div className="modal__dialog">
         <div className="modal__content">
-          <span className="modal__back icon fas fa-arrow-circle-left"></span>
+          <Link to="/">
+            <span className="modal__back icon fas fa-arrow-circle-left"></span>
+          </Link>
           <img
             className="modal__img"
             src={props.character.image}

@@ -5,7 +5,11 @@ import "../stylesheets/layout/_character.scss";
 const Character = (props) => {
   return (
     <li className="character">
-      <Link to={`/character/${props.character.name}`}>
+      <Link
+        /* target="_blank" */
+        to={`/character/${props.character.name}`}
+        title="Ver detalle del personaje"
+      >
         <img
           className="character__img"
           src={props.character.image}
