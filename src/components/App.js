@@ -33,7 +33,9 @@ const App = () => {
     filteredCharacters.length > 0 ? (
       <CharacterList characters={filteredCharacters} />
     ) : (
-      <p className="form__notFound"> ¡Sorry! There is no matching character</p>
+      <p className="form__notFound">
+        {`Upps! There are no characters with the word  ${characterFilter}. Try another!`}
+      </p>
     );
 
   return (
