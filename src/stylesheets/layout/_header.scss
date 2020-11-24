@@ -8,6 +8,10 @@
 
   &__logo {
     cursor: pointer;
-    width: 350px;
+    margin-top: 20px;
+    width: 400px;
+    @media (max-width: 400px) {
+      width: 280px;
+    }
   }
 }
