@@ -1,9 +1,26 @@
 .modal {
-  width: 300px;
-  height: 250px;
-  background-color: #00afc7;
+  &__status,
+  &__species,
+  &__origin,
+  &__episodes {
+    text-align: center;
+    font-family: "Kalam", cursive;
+    font-size: 20px;
+    color: blanchedalmond;
+    text-shadow: #97ce4c 1px 0 10px;
+    -webkit-text-stroke: 0.5px #454545;
+    margin-bottom: 10px;
+  }
+  &__name {
+    text-align: center;
+    font-family: "Kalam", cursive;
+    font-size: 40px;
+    color: blanchedalmond;
+    text-shadow: #97ce4c 5px 0px 8px;
+    -webkit-text-stroke: 0.8px #222;
+    margin: 5px auto 10px auto;
+  }
 }
-
 .url_norFound {
   font-family: "Kalam", cursive;
   color: blanchedalmond;
@@ -13,16 +30,3 @@
   margin-top: 50px;
   align-items: center;
 }
-/* .table .card__btn {
-  display: inline;
-  margin: 0 5px;
-  padding: 0.1rem 0.4rem;
-  vertical-align: middle;
-}
-
-.table .card__btn.fas {
-  margin-left: 1rem;
-  padding: 0.25rem 0.4rem;
-  font-size: 0.65rem;
-}
- */
