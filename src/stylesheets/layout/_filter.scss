@@ -6,9 +6,11 @@
 
   &__title-name {
     font-family: "Kalam", cursive;
+    font-size: 17px;
     color: blanchedalmond;
-    text-shadow: #97ce4c 2px 1px 10px;
-    margin-top: 20px;
+    text-shadow: #97ce4c 2px 0px 10px;
+    -webkit-text-stroke: 0.5px #222;
+    margin-top: 25px;
     text-transform: uppercase;
   }
 
