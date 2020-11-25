@@ -1,14 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../stylesheets/layout/_characterDetail.scss";
+import iconBack from "../images/icon_back.png";
 
 const CharacterDetail = (props) => {
   return (
     <>
       <article className="article">
-        <Link to="/">
-          <span className="article__back icon fas fa-arrow-circle-left"></span>
-        </Link>
         <img
           className="article__img"
           src={props.character.image}
@@ -23,6 +21,14 @@ const CharacterDetail = (props) => {
             Episodes: {props.character.episodes}
           </p>
         </li>
+        <Link to="/">
+          <img
+            className="article__back"
+            src={iconBack}
+            alt="back"
+            title="Back to characters list "
+          />
+        </Link>
       </article>
     </>
   );
