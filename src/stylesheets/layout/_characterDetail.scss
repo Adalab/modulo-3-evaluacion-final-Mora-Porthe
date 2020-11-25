@@ -8,7 +8,7 @@
   margin-right: auto;
   margin-top: 70px;
 
-  li {
+  div {
     margin-left: 30px;
   }
 
@@ -23,15 +23,15 @@
     -webkit-text-stroke: 0.5px #454545;
     margin-bottom: 8px;
   }
+
   &__name {
-    text-align: center;
     font-family: "Kalam", cursive;
     font-size: 40px;
     color: blanchedalmond;
     text-shadow: #97ce4c 2px 0px 8px;
     -webkit-text-stroke: 0.8px #222;
-    margin: 5px 0px 0px -58px;
   }
+
   &__img {
     justify-content: flex-start;
     width: 250px;

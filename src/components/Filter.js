@@ -8,8 +8,11 @@ const Filter = (props) => {
       key: "character",
     });
   };
+  const handleFormSubmit = (ev) => {
+    ev.preventDefault();
+  };
   return (
-    <form className="form">
+    <form className="form" onSubmit={handleFormSubmit}>
       <label className="form__title-name" htmlFor="name">
         ¿Who are you looking for?
       </label>

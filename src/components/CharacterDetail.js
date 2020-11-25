@@ -12,7 +12,8 @@ const CharacterDetail = (props) => {
           src={props.character.image}
           alt={props.character.name}
         />
-        <li>
+
+        <div>
           <h2 className="article__name">{props.character.name}</h2>
           <p className="article__status">Status: {props.character.status}</p>
           <p className="article__species">Species: {props.character.species}</p>
@@ -20,7 +21,7 @@ const CharacterDetail = (props) => {
           <p className="article__episodes">
             Episodes: {props.character.episodes}
           </p>
-        </li>
+        </div>
         <Link to="/">
           <img
             className="article__back"
