@@ -4,27 +4,27 @@ import "../stylesheets/layout/_characterDetail.scss";
 
 const CharacterDetail = (props) => {
   return (
-    <div className="modal">
-      <div className="modal__dialog">
-        <div className="modal__content">
-          <Link to="/">
-            <span className="modal__back icon fas fa-arrow-circle-left"></span>
-          </Link>
-          <img
-            className="modal__img"
-            src={props.character.image}
-            alt={props.character.name}
-          />
-          <h2 className="modal__name">{props.character.name}</h2>
-          <p className="modal__status">Status: {props.character.status}</p>
-          <p className="modal__species">Species: {props.character.species}</p>
-          <p className="modal__origin">Origin: {props.character.origin}</p>
-          <p className="modal__episodes">
+    <>
+      <article className="article">
+        <Link to="/">
+          <span className="article__back icon fas fa-arrow-circle-left"></span>
+        </Link>
+        <img
+          className="article__img"
+          src={props.character.image}
+          alt={props.character.name}
+        />
+        <li>
+          <h2 className="article__name">{props.character.name}</h2>
+          <p className="article__status">Status: {props.character.status}</p>
+          <p className="article__species">Species: {props.character.species}</p>
+          <p className="article__origin">Origin: {props.character.origin}</p>
+          <p className="article__episodes">
             Episodes: {props.character.episodes}
           </p>
-        </div>
-      </div>
-    </div>
+        </li>
+      </article>
+    </>
   );
 };
 
