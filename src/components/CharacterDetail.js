@@ -1,9 +1,19 @@
 import React from "react";
+/* import PropTypes from "prop-types"; */
 import { Link } from "react-router-dom";
 import "../stylesheets/layout/_characterDetail.scss";
 import iconBack from "../images/icon_back.png";
 
 const CharacterDetail = (props) => {
+  const status =
+    props.character.status === "Dead" ? (
+      <img src="https://img.icons8.com/cotton/25/000000/headstone--v1.png" />
+    ) : props.character.status === "unknown" ? (
+      <img src="https://img.icons8.com/dotty/25/000000/question-mark.png" />
+    ) : (
+      <img src="https://img.icons8.com/android/24/000000/like.png" />
+    );
+
   return (
     <>
       <article className="article">
@@ -15,7 +25,7 @@ const CharacterDetail = (props) => {
 
         <div>
           <h2 className="article__name">{props.character.name}</h2>
-          <p className="article__status">Status: {props.character.status}</p>
+          <p className="article__status">Status: {status}</p>
           <p className="article__species">Species: {props.character.species}</p>
           <p className="article__origin">Origin: {props.character.origin}</p>
           <p className="article__episodes">
@@ -34,5 +44,14 @@ const CharacterDetail = (props) => {
     </>
   );
 };
+
+/* CharacterDetail.propTypes = {
+  image: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  status: PropTypes.string.isRequired,
+  species: PropTypes.string.isRequired,
+  origin: PropTypes.string.isRequired,
+  episodes: PropTypes.number.isRequired,
+}; */
 
 export default CharacterDetail;

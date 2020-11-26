@@ -66,6 +66,13 @@
       right: 15px;
     }
   }
+  &__icons {
+    font-size: 10px;
+    @media all and(min-width:768px) {
+      font-size: 17px;
+      margin: 0 5px;
+    }
+  }
 }
 
 .url_norFound {
