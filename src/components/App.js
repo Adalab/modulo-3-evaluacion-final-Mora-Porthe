@@ -54,9 +54,9 @@ const App = () => {
   return (
     <>
       <Header />
-      <Filter handleFilter={handleFilter} />
       <Switch>
         <Route exact path="/">
+          <Filter handleFilter={handleFilter} />
           {filterCharacters}
         </Route>
         <Route path="/character/:name" render={renderCharacterDetail} />
