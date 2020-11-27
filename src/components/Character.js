@@ -6,7 +6,6 @@ const Character = (props) => {
   return (
     <li className="character">
       <Link
-        /* target="_blank" */
         to={`/character/${props.character.name}`}
         title="Ver detalle del personaje"
       >

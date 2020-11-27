@@ -13,6 +13,7 @@ const getDataFromApi = () => {
           image: character.image,
           origin: character.origin.name,
           episodes: character.episode.length,
+          type: character.type,
         };
       });
     });

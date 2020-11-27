@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 import getDataFromApi from "../services/getDataFromApi";
 import CharacterList from "./CharacterList";
 import Header from "./Header";
-import Filter from "./Filter";
+import FilterByName from "./FilterByName";
+import FilterBySpecie from "./FilterBySpecie";
 import CharacterDetail from "./CharacterDetail";
 import "../stylesheets/App.scss";
 
@@ -13,6 +14,7 @@ const App = () => {
 
   const [characters, setCharacters] = useState([]);
   const [characterFilter, setCharacterFilter] = useState("");
+  const [speciesFilter, setSpeciesFilter] = useState("");
 
   // api
 
@@ -23,12 +25,23 @@ const App = () => {
   // event handlers
 
   const handleFilter = (data) => {
-    setCharacterFilter(data.value);
+    console.log(data);
+    if (data.key === "character") {
+      setCharacterFilter(data.value);
+    } else if (data.key === "specie") {
+      setSpeciesFilter(data.value);
+    }
   };
 
-  const filteredCharacters = characters.filter((character) => {
-    return character.name.toUpperCase().includes(characterFilter.toUpperCase());
-  });
+  const filteredCharacters = characters
+    .filter((character) => {
+      return character.name
+        .toUpperCase()
+        .includes(characterFilter.toUpperCase());
+    })
+    .filter((character) => {
+      return character.type.toUpperCase().includes(speciesFilter.toUpperCase());
+    });
 
   const filterCharacters =
     filteredCharacters.length > 0 ? (
@@ -54,7 +67,8 @@ const App = () => {
   return (
     <>
       <Header />
-      <Filter handleFilter={handleFilter} />
+      <FilterByName handleFilter={handleFilter} />
+      <FilterBySpecie handleFilter={handleFilter} />
       <Switch>
         <Route exact path="/">
           {filterCharacters}
