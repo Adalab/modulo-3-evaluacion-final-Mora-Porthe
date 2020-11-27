@@ -1,7 +1,7 @@
 import React from "react";
 import "../stylesheets/layout/_filter.scss";
 
-const Filter = (props) => {
+const FilterByName = (props) => {
   const handleChange = (ev) => {
     props.handleFilter({
       value: ev.target.value,
@@ -28,4 +28,4 @@ const Filter = (props) => {
   );
 };
 
-export default Filter;
+export default FilterByName;

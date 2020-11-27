@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 import getDataFromApi from "../services/getDataFromApi";
 import CharacterList from "./CharacterList";
 import Header from "./Header";
-import Filter from "./Filter";
+import FilterByName from "./FilterByName";
+import FilterBySpecie from "./FilterBySpecie";
 import CharacterDetail from "./CharacterDetail";
 import "../stylesheets/App.scss";
 
@@ -56,7 +57,8 @@ const App = () => {
       <Header />
       <Switch>
         <Route exact path="/">
-          <Filter handleFilter={handleFilter} />
+          <FilterByName handleFilter={handleFilter} />
+          <FilterBySpecie handleFilter={handleFilter} />
           {filterCharacters}
         </Route>
         <Route path="/character/:name" render={renderCharacterDetail} />
